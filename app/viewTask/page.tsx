@@ -86,7 +86,7 @@ export default function ViewTaskPage() {
                 Due: {new Date(task.dueDate).toLocaleDateString()}
               </p>
               <p className="text-sm text-gray-500">Status: {task.status}</p>
-              <p className="text-sm text-gray-500">Assigned to Member ID: {task.assignedToMemberId}</p>
+              {/* <p className="text-sm text-gray-500">Assigned to Member ID: {task.assignedToMemberId}</p> */}
             </li>
           ))}
         </ul>
@@ -94,3 +94,5 @@ export default function ViewTaskPage() {
     </div>
   );
 }
+
+// https://meet.google.com/wns-gkdt-drp
