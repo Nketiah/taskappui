@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { Users } from 'lucide-react';
+import { Users, PlusCircle } from 'lucide-react';
 import Link from 'next/link';
+
 
 interface TeamMember {
   id: string;
@@ -47,15 +48,21 @@ export default function AllTeamsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
-      <div className="text-center mb-6">
-        <Link href="/dashboard">
-          <span className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition">
-            Go to dashboard
-          </span>
-        </Link>
-      </div>
+  <div className="flex  items-center justify-center gap-4 mb-6">
+   <Link href="/dashboard">
+    <span className="text-blue-600 hover:underline font-medium cursor-pointer">
+      ← Back to All Teams
+    </span>
+  </Link>
+  <Link href="/createTeam">
+    <span className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow transition">
+      <PlusCircle className="w-4 h-4" />
+      Create New Team
+    </span>
+  </Link>
+</div>
 
-      <h1 className="text-3xl font-bold text-center mb-8">All Teams & Members</h1>
+      {/* <h1 className="text-3xl font-bold text-center mb-8">All Teams & Members</h1> */}
 
       {error && <div className="text-red-600 text-center mb-4">{error}</div>}
 
